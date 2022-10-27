@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">RetrofitBasic</string>
+    <string name="firstName">Robin</string>
+    <string name="email">robinhoo990512@gmail.com</string>
 </resources>
