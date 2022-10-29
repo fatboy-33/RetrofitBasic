@@ -1,7 +1,5 @@
 package com.example.retrofitbasic.models
 
-import com.example.retrofitbasic.Data
-import com.example.retrofitbasic.Support
 import com.google.gson.annotations.SerializedName
 
 data class ResponseListUsers(

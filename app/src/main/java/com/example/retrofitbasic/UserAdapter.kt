@@ -3,10 +3,13 @@ package com.example.retrofitbasic
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
+import com.example.retrofitbasic.models.Data
 
 class UserAdapter(private val listener : (Data) -> Unit) : ListAdapter<Data, UserAdapter.ViewHolder>(DiffUserCallBack()){
 
@@ -18,8 +21,19 @@ class UserAdapter(private val listener : (Data) -> Unit) : ListAdapter<Data, Use
         }
 
         fun bind(user : Data){
-            containerView.findViewById<TextView>(R.id.name).text = user.firstName
+            containerView.findViewById<TextView>(R.id.firstName).text = user.firstName
+            containerView.findViewById<TextView>(R.id.lastName).text = user.lastName
             containerView.findViewById<TextView>(R.id.email).text = user.email
+
+            val imageView = containerView.findViewById<ImageView>(R.id.ProfileImage)
+            val imageUrl = user.avatar
+
+            Glide
+                .with(imageView)
+                .load(imageUrl)
+                .centerCrop()
+                .circleCrop()
+                .into(imageView)
         }
     }
 

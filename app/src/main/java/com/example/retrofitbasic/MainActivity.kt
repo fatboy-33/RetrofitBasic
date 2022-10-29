@@ -6,21 +6,17 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.ProgressBar
-import android.widget.TextView
 import android.widget.Toast
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.retrofitbasic.api.ApiInterface
 import com.example.retrofitbasic.api.RetrofitClient
 import java.lang.Exception
 
 class MainActivity : AppCompatActivity() {
-//    lateinit var txtData: TextView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-//        getUserList()
 
         val loading = findViewById<ProgressBar>(R.id.progress_bar)
         lifecycleScope.launchWhenCreated {
@@ -48,31 +44,5 @@ class MainActivity : AppCompatActivity() {
         }
     }
     }
-
-//    private fun getUserList() {
-//        var retrofit = RetrofitClient.getInstance()
-//        var apiInterface = retrofit.create(ApiInterface::class.java)
-//        txtData = findViewById(R.id.txtData)
-//
-//        lifecycleScope.launchWhenCreated {
-//            try {
-//                val response = apiInterface.getAllUsers()
-//                if (response.isSuccessful) {
-////success response
-////response.body()?.data?.get(0)?.email.let { Log.i("String", it.toString()) }
-//                    txtData.text = response.body()?.data?.get(0)?.firstName
-//                } else {
-//                    Toast.makeText(
-//                        this@MainActivity,
-//                        response.errorBody().toString(),
-//                        Toast.LENGTH_LONG
-//                    ).show()
-//                }
-//            }catch (Ex:Exception){
-//                Log.e("Error",Ex.localizedMessage)
-//            }
-//        }
-//
-//    }
 
 
