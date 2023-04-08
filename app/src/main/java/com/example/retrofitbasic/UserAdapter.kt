@@ -32,7 +32,7 @@ class UserAdapter(private val listener : (Data) -> Unit) : ListAdapter<Data, Use
                 .with(imageView)
                 .load(imageUrl)
                 .centerCrop()
-                .circleCrop()
+                //.circleCrop()
                 .into(imageView)
         }
     }
